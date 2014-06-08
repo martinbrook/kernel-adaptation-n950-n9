@@ -27,7 +27,7 @@ Kernel for n950.
 %define kernel_version_build %{version}-n950
 %define kernel_devel_dir %{_prefix}/src/linux-%{kernel_version_build}
 
-%define package_dir kernel-n9-%{version}
+%define package_dir %{name}-%{version}
 %define modules_dir %{buildroot}/lib/modules/%{kernel_version_build}
 %define builds_uImage 0
 %define builds_vmlinuz 1
