@@ -1,0 +1,90 @@
+* Thu Jul 04 2013 Bernd Wachter <bernd.wachter@jollamobile.com> - 2.6.32.20130129.1
+- Enable only the first framebuffer, and assign more vram to it
+
+* Fri Jan 25 2013 Philippe De Swert <philippe.deswert@jollamobile.com> - 2.6.32.20130129.1
+- Set CONFIG_USB_GADGET_VBUS_DRAW to 500 to allow for usb charging without g_nokia
+- Add eCrypts support
+
+* Mon Dec 07 2012 Kalle Jokiniemi <kalle.jokiniemi@jollamobile.com> - 2.6.32.20121810.5
+- NEMO#493 General phantom device slowness
+
+* Mon Nov 19 2012 Kalle Jokiniemi <kalle.jokiniemi@jollamobile.com> - 2.6.32.20121810.4
+- Increased amount of supported vibra effects to 64
+- Fixed perf issue in i2c by capping mpu wake up latency constraints to 100us
+
+* Tue Oct 30 2012 Kalle Jokiniemi <kalle.jokiniemi@jollamobile.com> - 2.6.32.20121810.2
+- Converted N9 vibra driver to ff-memless, it now supports FF_RUMBLE and FF_PERIODIC effects
+- Updated README with up-to-date instructions
+
+* Sun Oct 28 2012 Islam Amer <islam.amer@jollamobile.com> - 2.6.32.20121810.1
+- Make CONFIG_RTC_DRV_TWL4030 builtin so that the RTC device is available during early boot
+- Enable CONFIG_RTC_HCTOSYS so the kernel sets system clock on boot from hardware clock (UTC)
+
+* Sat Oct 20 2012 Denis Zalevskiy <denis.zalevskiy@jollamobile.com> - 2.6.32.20121810.1
+- N9 kernel 2.6.32-20121301+0m8 + mer patches
+- Some spec cleanup, specs are generated using generate-spec.sh
+
+* Thu Sep 27 2012 Marko Saukko <sage@merproject.org> - 2.6.32.20112201
+- Enable some options to support libhybris work.
+
+* Wed Sep 26 2012 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 2.6.32.20112201
+- Load correct bluetooth firmware for N9.
+
+* Sun Aug 26 2012 Marko Saukko <marko.saukko@jollamobile.com> - 2.6.32.20112201
+- Renewed the packaging.
+- Added kernel-adaptation-n950-debug.{config,spec} for debug kernel
+
+* Mon Aug 06 2012 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 2.6.32.20112201
+- Backported g_ffs module from 2.6.35 in patch 0001-backport-g_ffs-from-2.6.35.patch
+- Enabled CONFIG_USB_FUNCTIONFS=m
+
+* Mon Jul 30 2012 Marko Saukko <marko.saukko@jollamobile.com> - 2.6.32.20112201
+- Cleanup the packaging a bit.
+- Enabled some options based on mer_verify_kernel_config
+  - CONFIG_TMPFS_POSIX_ACL=y, CONFIG_RTC_DRV_CMOS=y, CONFIG_DEVTMPFS_MOUNT=y, 
+    CONFIG_AUDIT=y
+- Include modules.* files with wildcard to support old and new kmod.
+
+* Thu Jul 19 2012 Marko Saukko <marko.saukko@jollamobile.com> - 2.6.32.20112201
+- Enabled CONFIG_BTRFS_FS=y.
+
+* Wed Jan 11 2012 Vesa-Matti Hartikainen <vesa-matti.hartikainen@nokia.com> - 2.6.32.20112201
+- Fixes NEMO#46: login is really slow
+-- Added patch linux-2.6.38-tty-add-active-sysfs-attribute-to-tty0-and-console-d.patch
+
+* Thu Jan 05 2012 Carsten Munk <carsten@maemo.org> - 2.6.32.20112201
+- Add patch for -mno-unaligned-access to fix boot with 20110105.0.1 core
+
+* Thu Dec 01 2011 Markus Lehtonen <markus.lehtonen@iki.fi> - 2.6.32.20112201
+- config: enable g_multi USB gadget driver
+
+* Thu Dec 01 2011 Marko Saukko <marko.saukko@cybercom.com> - 2.6.32.20112201
+- Enabled kernel_varian_*, but commented calls to /sbin/new-kernel-pkg
+
+* Wed Nov 23 2011 Markus Lehtonen <markus.lehtonen@iki.fi> - 2.6.32.20112201
+- kexec patchset (and enable kexec in config)
+- initramfs hack to be able to load gzipped cpio initrd
+
+* Wed Nov 23 2011 Marko Saukko <marko.saukko@cybercom.com> - 2.6.32.20112201
+- Disabled %kernel_variant_preun and %kernel_variant_post.
+
+* Wed Sep 09 2011 Teemu Tuominen <teemu.tuominen@cybercom.com> - 2.6.32.20112201
+- Camera upgrade patch-set 
+  Nokia provided patches to sync up with upstream camera APIs 
+  also to be used with N900
+  Author Sakari Ailus <sakari.ailus@maxwell.research.nokia.com>
+- minor adaptation camera additions
+  use build-in iommu to make omap3-isp autoprobe correctly in boot
+  media-ioc-backport defines (upstream)
+
+* Fri Sep 09 2011 Carsten Munk <carsten@maemo.org> - 2.6.32.20112201
+- Add gcc 4.6 fix, adding arch_extension sec to assembly file
+
+* Fri Sep 09 2011 Carsten Munk <carsten@maemo.org> - 2.6.32.20112201
+- Drop aegis from kernel config, blocks single boot
+
+* Thu Sep 08 2011 Marko Saukko <marko.saukko@cybercom.com> - 2.6.32.20112201
+- Fixed kernel.spec.in and changed fastinit dependency to /sbin/init.
+
+* Fri Jun 03 2011 Markus Lehtonen <markus.lehtonen@nokia.com> - 2.6.32.20112201
+- Initial packaging of the N950 kernel.

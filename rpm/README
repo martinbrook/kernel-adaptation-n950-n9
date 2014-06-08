@@ -1,0 +1,20 @@
+Kernel tagging:
+- The GIT tree is here: https://github.com/nemomobile/kernel-adaptation-n950-n9
+- The branch for 2.6.32 based development is "mer-n9-2.6.32-20121301"
+- The old nemo-n9-2.6.32.YYYYDDMM.X tag numbering is not sequential, so we
+  increase the version during 2012 by just incrementing the .X, YYYYDDMM
+  has to remain same to make sure versions increase and zypper does not get
+  confused.
+
+- Once we reach 2013, the tagging will be changed to
+  nemo-n9-2.6.32.YYYYMMDD.X, where YYYYMMDD is the date, and X is running
+  number starting from 1 for tags made during same day.
+
+The kernel tarball generation (using git-archive):
+
+git archive --format=tar --prefix=kernel-n9-2.6.32.YYYYMMDD.X/ nemo-n9-2.6.32.YYYYMMDD.X |bzip2 > kernel-n9-2.6.32.YYYYMMDD.X.tar.bz2
+
+Spec file generation:
+- Generate spec files from kernel-adaptation-n950.spec.tpl using generate-spec.sh. 
+- Remember to edit EXTRAVERSION in generate-spec.sh, if you tagged a new version.
+
