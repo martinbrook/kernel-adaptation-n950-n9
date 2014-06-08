@@ -5,7 +5,7 @@ Release:    1
 Group:      Kernel/Linux Kernel
 License:    GPLv2
 URL:        https://github.com/nemomobile/kernel-adaptation-n950-n9
-Source0:    kernel-n9-%{version}.tar.bz2
+Source0:    %{name}-%{version}.tar.bz2
 Source1:    kernel-adaptation-n950.config
 Source2:    kernel-adaptation-n950.cmdline
 Source3:  kernel-adaptation-n950.spec.tpl
