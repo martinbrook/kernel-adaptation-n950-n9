@@ -47,8 +47,8 @@ Devel for n950 kernel
 %setup -q -n %{package_dir}
 
 
-cp %{SOURCE1} ./.config
-
+#cp %{SOURCE1} ./.config
+cp arch/arm/configs/n9_mer_defconfig .config
 # make sure EXTRAVERSION says what we want it to say
 perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = .20130129.1-n950/" Makefile
 
